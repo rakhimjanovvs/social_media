@@ -32,7 +32,7 @@ class UserPost(Base):
     reg_date = Column(DateTime, default=datetime.now())
 
     user_fk = relationship("User", back_populates="post_fk", lazy="joined")
-    photo_fk = relationship("PostPhot", back_populates="post_fk", cascade="all, delete-orphan")
+    photo_fk = relationship("PostPhoto", back_populates="post_fk", cascade="all, delete-orphan")
     comment_fk = relationship("Comment", back_populates="post_fk", cascade="all, delete-orphan")
 
 
